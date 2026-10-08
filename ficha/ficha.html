@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1350px;font-family:Inter,sans-serif;background:#0b1a2e;color:#fff;overflow:hidden}
+.card{position:relative;width:100%;height:100%;padding:56px 60px;
+ background:radial-gradient(circle at 85% 8%,rgba(117,170,219,.35),transparent 45%),linear-gradient(160deg,#0f2742 0%,#0b1a2e 60%,#08131f 100%)}
+.stripes{position:absolute;top:0;right:0;width:420px;height:560px;opacity:.06;-webkit-mask-image:linear-gradient(180deg,#000,transparent);
+ background:repeating-linear-gradient(180deg,#fff 0 40px,transparent 40px 80px)}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:20px;letter-spacing:6px;color:#75aadb;font-weight:700}
+.top .tag{border:2px solid #75aadb;padding:8px 16px;border-radius:6px;letter-spacing:3px}
+.hero{display:flex;gap:44px;margin-top:32px;align-items:center}
+.avatar{width:260px;height:300px;border-radius:24px;background:linear-gradient(180deg,#75aadb,#3d6f9e);position:relative;overflow:hidden;flex:none;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.avatar svg{position:absolute;bottom:0;left:0;width:100%}
+.avatar .num{position:absolute;top:14px;left:20px;font-size:64px;font-weight:900;color:rgba(255,255,255,.9)}
+.name small{display:block;font-size:22px;color:#9fc3e6;letter-spacing:4px;font-weight:600}
+.name h1{font-size:92px;line-height:.95;font-weight:900;letter-spacing:-2px;margin-top:8px}
+.name h1 span{color:#75aadb}
+.name p{margin-top:16px;font-size:24px;color:#c9d8e8}
+.flag{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:22px;font-weight:600;background:rgba(255,255,255,.08);padding:8px 16px;border-radius:40px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px}
+.box .k{font-size:15px;letter-spacing:2px;color:#9fc3e6;text-transform:uppercase;font-weight:600}
+.box .v{font-size:30px;font-weight:800;margin-top:6px}
+.box .s{font-size:16px;color:#c9d8e8;margin-top:2px}
+.row{display:flex;gap:24px;margin-top:28px}
+h2{font-size:18px;letter-spacing:4px;color:#75aadb;font-weight:800;margin-bottom:16px}
+.panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px 28px}
+.stats{flex:1.15}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 10px}
+.st .v{font-size:52px;font-weight:900;line-height:1}
+.st .k{font-size:15px;color:#c9d8e8;margin-top:4px}
+.bar{height:10px;background:rgba(255,255,255,.1);border-radius:5px;margin-top:28px;overflow:hidden}
+.bar i{display:block;height:100%;width:89%;background:linear-gradient(90deg,#75aadb,#b8d6f2)}
+.barl{display:flex;justify-content:space-between;font-size:15px;color:#c9d8e8;margin-top:8px}
+.pitchwrap{flex:.85}
+.pitch{width:100%;height:280px;border-radius:12px;background:repeating-linear-gradient(90deg,#1f6b3a 0 40px,#1c6235 40px 80px);position:relative;border:3px solid rgba(255,255,255,.75)}
+.pitch:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:3px solid rgba(255,255,255,.75)}
+.pitch:after{content:"";position:absolute;left:50%;top:50%;width:80px;height:80px;margin:-40px;border:3px solid rgba(255,255,255,.75);border-radius:50%}
+.area{position:absolute;left:-3px;top:25%;width:60px;height:50%;border:3px solid rgba(255,255,255,.75)}
+.dot{position:absolute;left:21%;top:50%;width:34px;height:34px;margin:-17px;border-radius:50%;background:#75aadb;border:4px solid #fff;box-shadow:0 0 0 10px rgba(117,170,219,.35);z-index:2}
+.dot2{left:21%;top:30%;opacity:.45;box-shadow:none}
+.pl{font-size:17px;color:#c9d8e8;margin-top:12px}
+.timeline{margin-top:24px}
+.tl{display:flex;justify-content:space-between;position:relative;margin-top:6px}
+.tl:before{content:"";position:absolute;left:30px;right:30px;top:15px;height:4px;background:linear-gradient(90deg,#3d6f9e,#75aadb)}
+.it{position:relative;text-align:center;width:150px}
+.it b{display:block;width:34px;height:34px;margin:0 auto;border-radius:50%;background:#0b1a2e;border:4px solid #75aadb}
+.it.cur b{background:#75aadb;border-color:#fff}
+.it .y{font-size:20px;font-weight:800;margin-top:10px}
+.it .c{font-size:19px;font-weight:600;margin-top:2px}
+.it .t{font-size:14px;color:#9fc3e6;margin-top:2px}
+.foot{position:absolute;left:60px;right:60px;bottom:28px;font-size:14px;color:#7f97b0;line-height:1.5;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}
+</style></head><body>
+<div class="card"><div class="stripes"></div>
+ <div class="top"><div>FICHA TÉCNICA</div><div class="tag">FÚTBOL URUGUAYO</div></div>
+
+ <div class="hero">
+  <div class="avatar"><div class="num">4</div>
+   <svg viewBox="0 0 260 230"><circle cx="130" cy="78" r="52" fill="#0b1a2e" opacity=".85"/><path d="M20 230c0-70 50-105 110-105s110 35 110 105z" fill="#0b1a2e" opacity=".85"/></svg>
+  </div>
+  <div class="name">
+   <small>DEFENSOR</small>
+   <h1>LAUTARO<br><span>PERTUSATTI</span></h1>
+   <p>Lautaro Omar Pertusatti González</p>
+   <div class="flag"><svg width="36" height="24" viewBox="0 0 36 24"><rect width="36" height="24" fill="#fff"/><g fill="#0038a8"><rect y="2.67" width="36" height="2.67"/><rect y="8" width="36" height="2.67"/><rect y="13.33" width="36" height="2.67"/><rect y="18.67" width="36" height="2.67"/></g><rect width="16" height="13.33" fill="#fff"/><circle cx="8" cy="6.67" r="3.6" fill="#fcd116"/></svg>Uruguay</div>
+  </div>
+ </div>
+
+ <div class="grid">
+  <div class="box"><div class="k">Nacimiento</div><div class="v">21/07/2001</div><div class="s">25 años</div></div>
+  <div class="box"><div class="k">Lugar</div><div class="v">Salto</div><div class="s">Uruguay</div></div>
+  <div class="box"><div class="k">Altura / Peso</div><div class="v">1,79 m</div><div class="s">79 kg</div></div>
+  <div class="box"><div class="k">Pie hábil</div><div class="v">Derecho</div><div class="s">Dorsal 4</div></div>
+ </div>
+
+ <div class="row">
+  <div class="panel stats">
+   <h2>TEMPORADA 2025</h2><div style="font-size:22px;font-weight:700;margin:-8px 0 22px">River Plate (Montevideo) · Liga AUF Uruguaya</div>
+   <div class="statgrid">
+    <div class="st"><div class="v">18</div><div class="k">Partidos</div></div>
+    <div class="st"><div class="v">18</div><div class="k">Titular</div></div>
+    <div class="st"><div class="v">1445</div><div class="k">Minutos</div></div>
+    <div class="st"><div class="v">0</div><div class="k">Goles</div></div>
+    <div class="st"><div class="v">0</div><div class="k">Asistencias</div></div>
+    <div class="st"><div class="v" style="color:#fcd116">4</div><div class="k">Amarillas</div></div>
+   </div>
+   <div class="bar"><i></i></div>
+   <div class="barl"><span>Promedio por partido</span><span><b style="color:#fff">80 min</b> de 90</span></div>
+  </div>
+  <div class="panel pitchwrap">
+   <h2>POSICIÓN</h2>
+   <div class="pitch"><div class="area"></div><div class="dot"></div></div>
+   <div class="pl">Defensor central · línea de fondo</div>
+  </div>
+ </div>
+
+ <div class="panel timeline">
+  <h2>TRAYECTORIA</h2>
+  <div class="tl">
+   <div class="it"><b></b><div class="y">Juveniles</div><div class="c">Danubio</div><div class="t">Formativas</div></div>
+   <div class="it"><b></b><div class="y">2019</div><div class="c">Nacional</div><div class="t">Llega libre</div></div>
+   <div class="it"><b></b><div class="y">2021</div><div class="c">Central Español</div><div class="t">Préstamo</div></div>
+   <div class="it"><b></b><div class="y">2023</div><div class="c">Rentistas</div><div class="t">Préstamo</div></div>
+   <div class="it"><b></b><div class="y">2024</div><div class="c">Tacuarembó</div><div class="t">Libre</div></div>
+   <div class="it cur"><b></b><div class="y">2025</div><div class="c">River Plate</div><div class="t">Libre · Liga AUF</div></div>
+  </div>
+ </div>
+
+ <div class="foot">Fuentes: Soccerway, Calciomercato, La Nación (Cancha Llena), BeSoccer, CeroAcero. Datos actualizados a 2025; CeroAcero lo vincula a Sud América en 2026 (sin confirmar). Imagen ilustrativa.</div>
+</div>
+</body></html>
