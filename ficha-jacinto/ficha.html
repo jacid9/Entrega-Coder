@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1350px;font-family:Inter,sans-serif;background:#0b1a2e;color:#fff;overflow:hidden}
+.card{position:relative;width:100%;height:100%;padding:54px 60px;
+ background:radial-gradient(circle at 88% 6%,rgba(117,170,219,.38),transparent 45%),linear-gradient(160deg,#0f2742 0%,#0b1a2e 60%,#08131f 100%)}
+.stripes{position:absolute;top:0;right:0;width:420px;height:560px;opacity:.06;-webkit-mask-image:linear-gradient(180deg,#000,transparent);
+ background:repeating-linear-gradient(180deg,#fff 0 40px,transparent 40px 80px)}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:20px;letter-spacing:6px;color:#75aadb;font-weight:700}
+.top .tag{border:2px solid #75aadb;padding:8px 16px;border-radius:6px;letter-spacing:3px}
+.hero{display:flex;gap:44px;margin-top:32px;align-items:center}
+.photo{width:280px;height:340px;border-radius:24px;background:linear-gradient(180deg,#75aadb,#3d6f9e);position:relative;overflow:hidden;flex:none;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.photo svg{position:absolute;bottom:0;left:0;width:100%}
+.photo .ph{position:absolute;top:18px;left:0;right:0;text-align:center;font-size:15px;letter-spacing:3px;font-weight:700;color:rgba(255,255,255,.8)}
+.name small{display:block;font-size:22px;color:#9fc3e6;letter-spacing:4px;font-weight:600}
+.name h1{font-size:96px;line-height:.95;font-weight:900;letter-spacing:-2px;margin-top:8px}
+.name h1 span{color:#75aadb}
+.chips{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:10px;font-size:21px;font-weight:600;background:rgba(255,255,255,.08);padding:9px 18px;border-radius:40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 22px}
+.box .k{font-size:15px;letter-spacing:2px;color:#9fc3e6;text-transform:uppercase;font-weight:600}
+.box .v{font-size:30px;font-weight:800;margin-top:6px}
+.box .s{font-size:16px;color:#c9d8e8;margin-top:2px}
+h2{font-size:18px;letter-spacing:4px;color:#75aadb;font-weight:800;margin-bottom:16px}
+.panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px 30px}
+.row{display:flex;gap:24px;margin-top:24px}
+.big{flex:1;display:flex;flex-direction:column;background:linear-gradient(150deg,#75aadb,#3d6f9e);border:none;color:#0b1a2e}
+.big h2{color:#0b1a2e;opacity:.75}
+.big .num{font-size:120px;font-weight:900;line-height:.9;letter-spacing:-4px}
+.big .num em{font-style:normal;font-size:64px}
+.big .lbl{font-size:26px;font-weight:800;margin-top:8px}
+.big .sub{font-size:17px;font-weight:600;margin-top:6px;opacity:.8}
+.hl{flex:1.25}
+.hl ul{list-style:none}
+.hl li{display:flex;gap:16px;align-items:flex-start;font-size:20px;line-height:1.35;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.hl li:last-child{border-bottom:none}
+.hl li b{flex:none;width:34px;height:34px;border-radius:50%;background:rgba(117,170,219,.18);color:#75aadb;display:flex;align-items:center;justify-content:center;font-size:18px}
+.hl li span strong{color:#fff}
+.hl li span{color:#c9d8e8}
+.timeline{margin-top:24px}
+.tl{display:flex;justify-content:space-around;position:relative;margin-top:6px}
+.tl:before{content:"";position:absolute;left:12%;right:12%;top:15px;height:4px;background:linear-gradient(90deg,#3d6f9e,#75aadb)}
+.it{position:relative;text-align:center;width:260px}
+.it b{display:block;width:34px;height:34px;margin:0 auto;border-radius:50%;background:#0b1a2e;border:4px solid #75aadb}
+.it.cur b{background:#75aadb;border-color:#fff}
+.it .y{font-size:21px;font-weight:800;margin-top:10px}
+.it .c{font-size:21px;font-weight:600;margin-top:2px}
+.it .t{font-size:15px;color:#9fc3e6;margin-top:3px}
+.foot{position:absolute;left:60px;right:60px;bottom:28px;font-size:14px;color:#7f97b0;line-height:1.5;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}
+</style></head><body>
+<div class="card"><div class="stripes"></div>
+ <div class="top"><div>PERFIL DE JUGADOR</div><div class="tag">AUF · URUGUAY</div></div>
+
+ <div class="hero">
+  <div class="photo" id="photo">
+   <div class="ph">TU FOTO ACÁ</div>
+   <svg viewBox="0 0 280 260"><circle cx="140" cy="92" r="58" fill="#0b1a2e" opacity=".85"/><path d="M20 260c0-78 54-118 120-118s120 40 120 118z" fill="#0b1a2e" opacity=".85"/></svg>
+  </div>
+  <div class="name">
+   <small>FUTBOLISTA · CLASE 2003</small>
+   <h1>JACINTO<br><span>DE LIZARZA</span></h1>
+   <div class="chips">
+    <div class="chip"><svg width="36" height="24" viewBox="0 0 36 24"><rect width="36" height="24" fill="#fff"/><g fill="#0038a8"><rect y="2.67" width="36" height="2.67"/><rect y="8" width="36" height="2.67"/><rect y="13.33" width="36" height="2.67"/><rect y="18.67" width="36" height="2.67"/></g><rect width="16" height="13.33" fill="#fff"/><circle cx="8" cy="6.67" r="3.6" fill="#fcd116"/></svg>Uruguay</div>
+    <div class="chip">⚽ Perfil goleador</div>
+   </div>
+  </div>
+ </div>
+
+ <div class="grid">
+  <div class="box"><div class="k">Nacimiento</div><div class="v">04/08/2003</div><div class="s">23 años</div></div>
+  <div class="box"><div class="k">Club actual</div><div class="v">Bella Vista</div><div class="s">Montevideo · AUF</div></div>
+  <div class="box"><div class="k">Experiencia</div><div class="v">3 clubes AUF</div><div class="s">Desde 2023</div></div>
+ </div>
+
+ <div class="row">
+  <div class="panel big">
+   <h2>EFECTIVIDAD</h2>
+   <div class="num">96<em>'</em></div>
+   <div class="lbl">1 gol cada 96 minutos</div>
+   <div class="sub">Keguay · Divisional D 2024 (AUF)</div>
+   <div style="margin-top:auto;padding-top:18px;border-top:2px solid rgba(11,26,46,.2);font-size:22px;font-weight:800">Casi 1 gol por partido completo</div>
+  </div>
+  <div class="panel hl">
+   <h2>DESTACADOS</h2>
+   <ul>
+    <li><b>1</b><span><strong>7 goles</strong> con Keguay en la Divisional D 2024</span></li>
+    <li><b>2</b><span>Goleó en el <strong>12-0 récord histórico</strong> de Paso de la Arena (21/10/2023)</span></li>
+    <li><b>3</b><span>Salto a <strong>Bella Vista</strong>, club histórico del fútbol uruguayo</span></li>
+    <li><b>4</b><span>23 años: <strong>edad ideal</strong> para dar el salto de categoría</span></li>
+   </ul>
+  </div>
+ </div>
+
+ <div class="panel timeline">
+  <h2>TRAYECTORIA</h2>
+  <div class="tl">
+   <div class="it"><b></b><div class="y">2023</div><div class="c">Paso de la Arena</div><div class="t">Divisional D · AUF</div></div>
+   <div class="it"><b></b><div class="y">2024</div><div class="c">Keguay</div><div class="t">Divisional D · 7 goles</div></div>
+   <div class="it cur"><b></b><div class="y">2025 – hoy</div><div class="c">Bella Vista</div><div class="t">Montevideo · AUF</div></div>
+  </div>
+ </div>
+
+ <div class="foot">Fuentes: AUF (histórico de planteles y temporadas, Divisional D) y Wikipedia (Divisional D 2024; C.S.D. Paso de la Arena).</div>
+</div>
+<script>
+// Si existe foto.jpg junto a este archivo, reemplaza la silueta
+const img=new Image();img.onload=()=>{const p=document.getElementById('photo');p.innerHTML='';p.appendChild(img)};img.src='foto.jpg';
+</script>
+</body></html>
